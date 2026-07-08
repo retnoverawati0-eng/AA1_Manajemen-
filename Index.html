@@ -3,162 +3,523 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Review wardah perfect bright cream</title>
+    <title>Portfolio & Resume - Retno Verawati</title>
+    <!-- Font Awesome untuk Icon Media Sosial & Checklist -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --lilac-primary: #9d81ba; /* Warna lilac utama */
+            --lilac-dark: #7a5f97;    /* Warna lilac tua untuk hover */
+            --lilac-light: #f6f3f9;   /* Warna background super muda */
+            --text-dark: #343a40;
+            --text-muted: #6c757d;
+        }
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Efek scroll halus saat menu diklik */
         }
 
         body {
-            background-color: #f5f5f5;
-            display: flex;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 800px;
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
             background-color: #ffffff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            display: flex;
         }
 
-        /* Menu Navigasi - Berubah jadi Biru Soft */
+        /* --- SIDEBAR NAVIGATION --- */
         nav {
-            background-color: #a2c2e8; 
-            padding: 10px;
-            margin-bottom: 25px;
+            background-color: var(--lilac-primary);
+            width: 270px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            z-index: 100;
+        }
+
+        nav .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 8px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+            margin-bottom: 2rem;
+        }
+
+        img{
+            max-width:100%;
+            height:auto;
         }
 
         nav ul {
             list-style: none;
-            display: flex;
-            justify-content: flex-start;
-            gap: 25px;
+            text-align: center;
+        }
+
+        nav ul li {
+            margin-bottom: 1rem;
         }
 
         nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: bold;
+            font-family: 'Saira Extra Condensed', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.05rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.65);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        /* Judul Artikel */
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+
+        /* --- MAIN CONTENT AREA --- */
+        main {
+            margin-left: 270px;
+            width: calc(100% - 270px);
+            padding: 0 5rem;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 5rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        /* Menghilangkan garis bawah pada section terakhir */
+        section:last-child {
+            border-bottom: none;
+        }
+
+        /* --- TYPOGRAPHY & HEADINGS --- */
         h1 {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 26px;
-            color: #111111;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        /* Meta Post - Berubah jadi Abu-abu */
-        .meta-post {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .meta-item {
-            background-color: #d1d5db; /* Abu-abu */
-            color: #ffffff;
-            padding: 5px 10px;
-            font-size: 11px;
-            font-weight: bold;
+            font-family: 'Saira Extra Condensed', sans-serif;
+            font-size: 5.5rem;
+            font-weight: 700;
+            line-height: 1;
             text-transform: uppercase;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
         }
 
-        /* Konten Utama */
-        .content {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
+        h1 span {
+            color: var(--lilac-primary);
         }
 
-        .image-box {
-            width: 35%;
-            flex-shrink: 0;
+        h2 {
+            font-family: 'Saira Extra Condensed', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--text-dark);
+            margin-bottom: 3rem;
         }
 
-        .image-box img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border: 1px solid #e5e7eb;
+        h3 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--text-dark);
         }
 
-        .text-box {
-            width: 65%;
-            color: #333333;
-            font-size: 15px;
-            line-height: 1.5;
-            text-align: justify;
+        .subheading {
+            font-family: 'Saira Extra Condensed', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.05rem;
+            margin-bottom: 1.5rem;
         }
 
-        /* Tombol Read More */
-        .read-more-wrapper {
-            text-align: right;
-            margin-top: 15px;
+        p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-muted);
         }
 
-        .read-more {
-            color: #ff4d4d;
+        /* --- SECTIONS SPECIFIC --- */
+        
+        /* About */
+        .contact-info {
+            font-family: 'Saira Extra Condensed', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-transform: none;
+            letter-spacing: 0.05rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info a {
+            color: var(--lilac-primary);
             text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-            font-family: 'Times New Roman', Times, serif;
         }
 
-        .read-more:hover {
+        .contact-info a:hover {
+            color: var(--lilac-dark);
             text-decoration: underline;
         }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: #495057;
+            color: #ffffff;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--lilac-primary);
+        }
+
+        /* Resume Item Structure (Experience & Education) */
+        .resume-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+        }
+
+        .resume-content {
+            max-width: 75%;
+        }
+
+        .resume-date {
+            min-width: 25%;
+            text-align: right;
+        }
+
+        .resume-date span {
+            font-size: 1.15rem;
+            color: var(--lilac-primary);
+            font-weight: 600;
+        }
+
+        /* Skills */
+        .dev-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            font-size: 3.5rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .dev-icons i:hover {
+            color: var(--lilac-primary);
+            transition: color 0.3s ease;
+        }
+
+        .fa-ul {
+            list-style: none;
+            margin-left: 2rem;
+        }
+
+        .fa-ul li {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .fa-ul li i {
+            color: var(--lilac-primary);
+            margin-right: 0.5rem;
+        }
+
+        /* --- RESPONSIVE LAYOUT (MOBILE) --- */
+       @media (max-width:768px){
+
+    nav{
+        width:100%;
+        height:auto;
+        position:relative;
+        padding:15px;
+    }
+
+    nav .profile-img{
+        display:block;
+        width:120px;
+        height:120px;
+        margin-bottom:15px;
+    }
+
+    nav ul{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:8px;
+    }
+
+    nav ul li{
+        margin:0;
+    }
+
+    nav ul li a{
+        font-size:16px;
+    }
+
+    main{
+        margin-left:0;
+        width:100%;
+        padding:20px;
+    }
+
+    section{
+        min-height:auto;
+        padding:40px 0;
+    }
+
+    h1{
+        font-size:48px;
+    }
+
+    h2{
+        font-size:34px;
+    }
+
+    h3{
+        font-size:24px;
+    }
+
+    p{
+        font-size:16px;
+    }
+
+    .resume-item{
+        display:block;
+    }
+
+    .resume-content,
+    .resume-date{
+        width:100%;
+        max-width:100%;
+        text-align:left;
+    }
+
+    .resume-date{
+        margin-top:10px;
+        margin-bottom:20px;
+    }
+
+    .social-icons{
+        flex-wrap:wrap;
+    }
+
+    .social-icons a{
+        width:50px;
+        height:50px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    h1{
+        font-size:36px;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    .contact-info{
+        font-size:18px;
+        word-break:break-word;
+    }
+
+    nav ul{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    nav ul li{
+        width:100%;
+    }
+
+    nav ul li a{
+        display:block;
+        padding:8px;
+    }
+
+}
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Adults</a></li>
-                <li><a href="#">Featured</a></li>
-                <li><a href="#">Gardening</a></li>
-                <li><a href="#">Uncategorizes</a></li>
-            </ul>
-        </nav>
+    <!-- Sidebar Navigasi -->
+    <nav>
+        <img class="profile-img" src="fotoretno.png" alt="Profile Picture">
+        <ul>
+            <li><a href="#about">Tentang Diri Saya</a></li>
+            <li><a href="#experience">Pengalaman Kerja</a></li>
+            <li><a href="#education">Pendidikan</a></li>
+            <li><a href="#skills">Kemampuan</a></li>
+            <li><a href="#interests">Hobi</a></li>
+            <li><a href="#awards">Penghargaan</a></li>
+        </ul>
+    </nav>
 
-        <h1> wardah perfect bright cream </h1>
+    <!-- Konten Utama -->
+    <main>
+        
+        <!-- 1. ABOUT SECTION -->
+        <section id="about">
+            <h1>Retno <span>Verawati</span></h1>
+            <div class="contact-info">
 
-        <div class="meta-post">
-            <div class="meta-item">Posted by Retno Verawati</div>
-            <div class="meta-item">311251390001  | AA1, Semester 2</div>
+    <a href="https://wa.me/6289662715808" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        +62 896-6271-5808
+    </a>
+
+    &nbsp; | &nbsp;
+
+    <a href="mailto:retnoverawati234@gmail.com">
+        <i class="fas fa-envelope"></i>
+        retnoverawati234@gmail.com
+    </a>
+
+</div>
+            <p>
+                Saya lulusan dari SMK Al-Basyariah dengan jurusan Perkantoran dan Manajemen Bisnis. Di SMK saya mengikuti Pratik Kerja Lapangan
+
+                (PKL) di Dinas Pendidikan Kota Depok disana saya banyak belajar dari mulai membuat surat, mendata surat, mengindeks surat, serta mendisposisikan surat.
+            </p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/retno-verawati-9b45023b6/"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://vt.tiktok.com/ZSCvfH6GX/"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/rtnnoo?igsh=MTE2ZTJ6OWQxb3l0cg=="><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/6289662715808"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+
+        <!-- 2. EXPERIENCE SECTION -->
+        <section id="experience">
+            <h2>Pengalaman Kerja</h2>
+            
+            <div class="resume-item">
+                <div class="resume-content">
+                    <h3>Volunteer Hari jadi Bogor 2025</h3>
+                    <div class="subheading">Panitia Acara di Yayasan Pena Foundation</div>
+                    <p>Saya membantu mempersiapkan acara yang akan dilaksanakan, membantu menawarkan beberapa produk ke konsumen, membuat laporan stock opname, dan membuat laporan keuangan.</p>
+                </div>
+                <div class="resume-date">
+                    <span>11 Juni - 26 Juli 2025 </span>
+                </div>
+            </div>
+
+            <div class="resume-item">
+                <div class="resume-content">
+                    <h3>Praktik Kerja Lapangan (PKL) Dinas Pendidikan Kota Depok</h3>
+                    <div class="subheading">Asisten Ajudan Kepala Dinas.</div>
+                    <p>Mencatat surat keluar dan masuk, membuat surat, mendata surat, mendisposisikan surat, memcatat agenda kepala dinas, membuat  laporan tamu dan mendokumentasikan.</p>
+                </div>
+                <div class="resume-date">
+                    <span>Juli - September 2024</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. EDUCATION SECTION -->
+        <section id="education">
+    <h2>Pendidikan</h2>
+
+    <div class="resume-item">
+        <div class="resume-content">
+            <h3>SMK Al-Basyariah</h3>
+            <div class="subheading">
+                Jurusan Manajemen Perkantoran dan Layanan Bisnis
+            </div>
         </div>
 
-        <div class="content">
-            <div class="image-box">
-                <img src="data:image/webp;base64,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" alt="Smartphone Vivo Terbaru">
-            </div>
-            <div class="text-box">
-                Wardah Perfect Bright Cream adalah rangkaian skincare dari Wardah yang fokus untuk mencerahkan kulit sekaligus mengontrol minyak berlebih. Produk ini cocok untuk kulit normal hingga berminyak, dengan formula halal, bebas alkohol, dan dermatologically tested.
-                <br><br>
-             <p>Kandungan utama : 4X Bright Berries (Cranberry, Acai, Goji, Amethyst Berry) → kaya vitamin B3, C, dan E untuk mencerahkan dan menutrisi kulit. Zinc (Oil Control Technology) → menjaga kulit bebas kilap hingga 12 jam. Clair Blanche™ → kombinasi bahan aktif pencerah. SPF 30 PA+++ → perlindungan dari sinar UVA/UVB.</p>
-                <br><br>
-             <p>Wardah Perfect Bright Cream cocok untuk kamu yang ingin kulit cerah, sehat, dan bebas kilap. Foam dipakai untuk membersihkan wajah, sedangkan Moisturizer menjaga kelembapan, mencerahkan, dan melindungi dari sinar matahari. Keduanya bisa dipakai sebagai rangkaian harian agar hasil lebih optimal.</p>
-            </div>
-        </div>
-
-        <div class="read-more-wrapper">
-            <a href="#" class="read-more">Read More</a>
+        <div class="resume-date">
+            <span>2022 - 2025</span>
         </div>
     </div>
+
+    <div class="resume-item">
+        <div class="resume-content">
+            <h3>SMP Al-Basyariah</h3>
+        </div>
+
+        <div class="resume-date">
+            <span>2019 - 2022</span>
+        </div>
+    </div>
+
+</section>
+
+        <!-- 4. SKILLS SECTION -->
+        <section id="skills">
+            <h2>Kemampuan</h2>
+            <div class="subheading"></div>
+            
+            <!-- Grid Icon Teknologi -->
+            <div></i>
+            </div>
+
+            <div class="subheading">Kemampuan</div>
+            <ul class="fa-ul">
+                <li><i class="fas fa-check"></i> Microsoft Word</li>
+                <li><i class="fas fa-check"></i> Microsoft Excel</li>
+                <li><i class="fas fa-check"></i> Penyusunan laporan Keuangan</li>
+                <li><i class="fas fa-check"></i> Administrasi Dokumen</li>
+                <li><i class="fas fa-check"></i> Komunikasi yang baik</li>
+                <li><i class="fas fa-check"></i> Public Speaking yang baik</li>
+                <li><i class="fas fa-check"></i> Mudah beradaptasi</li>
+            </ul>
+        </section>
+
+        <!-- 5. INTERESTS SECTION -->
+        <section id="interests">
+            <h2>Hobi</h2>
+            <p>Selain itu saya juga suka meluangkan waktu untuk berlari atau berenang, atau saya bisa menghabiskan waktu hanya untuk memasak, masakan yang saya ingin coba ataupun membuat kue yang sedang saya inginkan.</p>
+            <br>
+            <p></p>
+        </section>
+
+        <!-- 6. AWARDS SECTION -->
+        <section id="awards">
+            <h2>Penghargaan & Sertifikasi</h2>
+            <ul class="fa-ul">
+                <li><i class="fas fa-trophy"></i> Sertifikat Praktik Kerja Lapangan (PKL)</li>
+                <li><i class="fas fa-trophy"></i> Sertifikat Company Visit di Bursa Efek Indonesia (PT IDX 2026) </li>
+            </ul>
+        </section>
+
+    </main>
 
 </body>
 </html>
